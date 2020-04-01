@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native
 import RestaurantDetails from './RestaurantDetails'
 import { useNavigation } from '@react-navigation/native';
 
-const RestaurantsList = ({ title, restaurants }) => {
+const RestaurantsList = ({ title, restaurants, horizontal = true }) => {
   const navigation = useNavigation()
 
   const renderItem = ({ item }) => (
@@ -19,7 +19,7 @@ const RestaurantsList = ({ title, restaurants }) => {
     <View style={styles.container}>
       <Text style={styles.titleStyle}>{title}</Text>
       <FlatList
-        horizontal
+        horizontal={horizontal}
         data={restaurants}
         keyExtractor={restaurant => restaurant.id}
         renderItem={renderItem}

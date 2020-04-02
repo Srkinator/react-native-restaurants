@@ -1,5 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useState } from 'react'
+
 import { map } from 'ramda'
+import { useFocusEffect } from '@react-navigation/native';
 
 import { retrieveData } from '../api/storage'
 import yelp from "../api/yelp";
@@ -9,9 +11,11 @@ export default () => {
   const [favRestaurants, setFavRestaurants] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
-  useEffect(() => {
-    getData()
-  }, [])
+  useFocusEffect(
+    useCallback(() => {
+      getData()
+    }, [])
+  )
 
   const getData = async _ => {
     setIsLoading(true)

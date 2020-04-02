@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, ScrollView } from "react-native";
+import { View, Text } from "react-native";
 
 import useFavorites from '../hooks/useFavorites'
 import RestaurantsList from '../components/RestaurantsList'
@@ -22,9 +22,9 @@ const FavoritesScreen = ({ route }) => {
   }
 
   return (
-    <ScrollView>
+    <View>
       <RestaurantsList horizontal={false} title="Big Spender" restaurants={restaurants} />
-  </ScrollView>
+  </View>
   );
 };
 

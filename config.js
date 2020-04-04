@@ -1,3 +1,0 @@
-export default {
-  API_KEY: '1ZtSRhENiQ6pcqRCifXp9878ocb68GI86uG9Vi72VRT9x2o4WFCS_mIaQk4ZywqDcjQgwL4kN4GgXBNPcR1ZOLqxpxs8JPX6uTkHJEOr2x-oR-GnlRdNanakQRSCXnYx'
-}

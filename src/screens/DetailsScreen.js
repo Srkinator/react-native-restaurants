@@ -4,6 +4,7 @@ import { contains } from 'ramda'
 import { AntDesign } from '@expo/vector-icons'
 import useSingleRestaurant from '../hooks/useSingleRestaurant';
 import useStorage from '../hooks/useStorage';
+import RestaurantActions from '../components/RestaurantActions'
 
 import { storeData } from '../api/storage'
 
@@ -22,10 +23,12 @@ const DetailsScreen = ({ route }) => {
     <View>
       <View style={styles.nameContainer}>
         <Text style={styles.nameStyle}>{restaurant.name}</Text>
+
         <TouchableOpacity onPress={() => storeData('favRestaurants', id, refreshStorage)}>
           <AntDesign name={contains(id, favRestaurants) ? 'heart' : 'hearto'} style={styles.iconStyle} />
         </TouchableOpacity>
       </View>
+      <RestaurantActions restaurant={restaurant} />
 
       <FlatList
         data={restaurant.photos}
